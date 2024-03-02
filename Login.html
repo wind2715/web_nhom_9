@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
+        <div class="background"></div>
         <div class="container">
             <div class="header">
                 <img class="logo" src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-hoc-vien-cong-nghe-buu-chinh-vien-thong-mien-phi.jpg" alt="logo_ptit"/>
-                <h2>Login</h2>
+                <h3>LOGIN</h3>
             </div>
             <div class="formbody">
                 <form id="form" class="form">
@@ -28,22 +29,24 @@
 
                     <div class="form-control">
                         <label for="username">Password</label>
-                        <input type="password" placeholder="password" id="password">
+                        <input type="password" placeholder="password" id="password" required>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small>Error message</small>
                     </div>
-        
-                    <div class="button-group">
-                
-                        <button onclick="redirectToLogin()" class="log">Login</button>
-                        <button onclick="redirectToRegister()" class="res">Register</button>
-                
+
+                    <div class="regis">
+                        <p>New User? <a href="http://127.0.0.1:5500/baitapnhom/register.html">Register</a></p>
                     </div>
+
+                    <div class="button-group">
+                        <button onclick="redirectToLogin()" class="log">LOGIN</button>
+                    </div>
+                   
                 </form>
             </div>
         </div>
     </main>
 </body>
-<script src="login.js"> </script>
+<script src="script.js"> </script>
 </html>
