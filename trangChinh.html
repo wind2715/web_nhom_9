@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chính</title>
+    <link rel="stylesheet" href="trangChinh.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div class="nav">
+            <i class="fa-solid fa-house-chimney"></i>
+            <a href="">Trang chủ</a>
+        </div>
+        <div class="user">
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </div>
+
+    <h1>Danh sách kỳ thi</h1>
+  
+    <div id="filter">
+        <input type="text" id="search-input" placeholder="Tìm kiếm">
+        <select id="status-filter">
+            <option value="all">Tất cả</option>
+            <option value="free">Có thể truy cập tự do</option>
+            <option value="timed">Yêu cầu thời gian cụ thể</option>
+        </select>
+    </div>
+  
+    <ul id="exams-list"></ul>
+
+    <script src="trangChinh.js"></script>
+</body>
+</html>
