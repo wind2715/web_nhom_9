@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://portal.ptit.edu.vn/wp-content/uploads/2023/08/DJI_0014.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+	padding: 5px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 500px;
+    padding: 0;
+    border-radius: 4px;
+    position: relative;
+	max-height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.logo {
+    width: 43px;
+    height: auto;
+    border-radius: 5px;
+    padding: 0;
+    
+}
+
+.header {
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #ad171c;
+    color: #f0f0f0;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.header h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0.9; /* Đặt độ co giãn của h3 để lấp đầy không gian trống */
+}
+
+.form {
+    padding: 20px 30px;
+}
+
+.form-control {
+    margin-bottom: 5px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 6px;
+    width: 100%;
+    border-color: #ccc;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+.form button {
+    cursor: pointer;
+    background-color: #ad171c;
+    border: 2px solid #ad171c;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 5px;
+    width: 100%;
+}
+
+.form button:active {
+    background-color: #218838;
+    border: 1px solid #fff;
+}
+.regis {
+	text-align: right;
+	margin-top: -12px;
+}
