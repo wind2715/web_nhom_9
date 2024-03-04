@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Chính</title>
+    <link rel="stylesheet" href="styles_main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="overlay"></div>
+
+    <header>
+      <img src="../../images/logo-ptit.png" alt="Your Logo" />
+      <i class="fas fa-user"></i>
+    </header>
+
+    <div class="filter-btn-container">
+      <div id="filter-btn"><i class="fas fa-filter"></i></div>
+    </div>
+
+    <div id="filter-form" class="hidden">
+      <form id="filter-form-inner">
+        <div>
+          <label for="exam">Kỳ thi:</label>
+          <select id="exam" name="exam">
+            <option value="all">Tất cả</option>
+            <option value="luyen_tap">Luyện tập</option>
+            <option value="giua_ky">Giữa Kỳ</option>
+            <option value="cuoi_ky">Cuối Kỳ</option>
+            <option value="bai_tap">Bài tập</option>
+          </select>
+        </div>
+        <div>
+          <label for="subject">Môn thi:</label>
+          <select id="subject" name="subject">
+            <option value="all">Tất cả</option>
+            <option value="lap_trinh_web">Lập trình Web</option>
+            <option value="lap_trinh_fe">Lập trình FE</option>
+            <option value="lap_trinh_be">Lập trình BE</option>
+            <option value="lap_trinh_ft">Lập trình FT</option>
+          </select>
+        </div>
+        <div>
+          <label for="status">Trạng thái:</label>
+          <select id="status" name="status">
+            <option value="all">Tất cả</option>
+            <option value="open">Đang diễn ra</option>
+            <option value="closed">Đóng</option>
+          </select>
+        </div>
+        <button type="button" id="filter-submit">Lọc</button>
+      </form>
+    </div>
+
+    <main>
+      <div
+        class="exam-box"
+        data-exam="luyen_tap"
+        data-subject="lap_trinh_web"
+        data-status="open"
+      >
+        <!-- Box 1 -->
+        <h2>Luyện tập</h2>
+        <p>Môn học: Lập trình web</p>
+        <p>Khóa: D21</p>
+        <p>Kết thúc: 29-2-2024</p>
+        <p class="exam-status">Đang diễn ra</p>
+        <button class="start-exam-btn">Bắt đầu làm bài</button>
+      </div>
+      <div
+        class="exam-box"
+        data-exam="giua_ky"
+        data-subject="lap_trinh_fe"
+        data-status="open"
+      >
+        <!-- Box 2 -->
+        <h2>Giữa kỳ</h2>
+        <p>Môn học: Lập trình FE</p>
+        <p>Khóa: D21</p>
+        <p>Kết thúc: 29-2-2024</p>
+        <p class="exam-status">Đang diễn ra</p>
+        <button class="start-exam-btn">Bắt đầu làm bài</button>
+      </div>
+      <div
+        class="exam-box"
+        data-exam="cuoi_ky"
+        data-subject="lap_trinh_be"
+        data-status="open"
+      >
+        <!-- Box 3 -->
+        <h2>Cuối kỳ</h2>
+        <p>Môn học: Lập trình be</p>
+        <p>Khóa: D21</p>
+        <p>Kết thúc: 29-2-2024</p>
+        <p class="exam-status">Đang diễn ra</p>
+        <button class="start-exam-btn">Bắt đầu làm bài</button>
+      </div>
+      <div
+        class="exam-box"
+        data-exam="bai_tap"
+        data-subject="lap_trinh_ft"
+        data-status="open"
+      >
+        <!-- Box 4 -->
+        <h2>Bài tập</h2>
+        <p>Môn học: Lập trình web</p>
+        <p>Khóa: D21</p>
+        <p>Kết thúc: 29-2-2024</p>
+        <p class="exam-status">Đang diễn ra</p>
+        <!-- Trong mỗi exam-box -->
+        <button class="start-exam-btn">Bắt đầu làm bài</button>
+      </div>
+      <!-- Thêm thêm box tương tự cho các đề thi khác -->
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterBtn = document.getElementById("filter-btn");
+        const filterForm = document.getElementById("filter-form");
+        const examBoxes = document.querySelectorAll(".exam-box");
+
+        const startExamButtons = document.querySelectorAll(".start-exam-btn");
+
+        // Lặp qua từng nút và thêm sự kiện click
+        startExamButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            // Chuyển hướng sang trang exam.html khi nút được nhấn
+            window.location.href = "../exam/exam.html";
+          });
+        });
+        filterBtn.addEventListener("click", function () {
+          filterForm.classList.toggle("active");
+          document.body.classList.toggle("filter-active");
+        });
+
+        const filterSubmitButton = document.getElementById("filter-submit");
+        const filterFormInner = document.getElementById("filter-form-inner");
+
+        filterSubmitButton.addEventListener("click", function () {
+          const selectedExam = filterFormInner.exam.value;
+          const selectedSubject = filterFormInner.subject.value;
+          const selectedStatus = filterFormInner.status.value;
+
+          examBoxes.forEach(function (box) {
+            const exam = box.getAttribute("data-exam");
+            const subject = box.getAttribute("data-subject");
+            const status = box.getAttribute("data-status");
+
+            if (
+              (selectedExam === "all" || selectedExam === exam) &&
+              (selectedSubject === "all" || selectedSubject === subject) &&
+              (selectedStatus === "all" || selectedStatus === status)
+            ) {
+              box.style.display = "block"; // Hiển thị box nếu phù hợp
+            } else {
+              box.style.display = "none"; // Ẩn box nếu không phù hợp
+            }
+          });
+
+          filterForm.classList.remove("active");
+          document.body.classList.remove("filter-active");
+        });
+      });
+    </script>
+  </body>
+</html>

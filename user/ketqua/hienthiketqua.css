@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+#header {
+    width: 100%;
+    height: 50px;
+    background-color: #ad171c;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header .nav{
+    color: #ffffff;
+    margin-left: 48px;
+    font-size: 18px;
+}
+#header a{
+    text-decoration: none;
+    color: #ffffff;
+}
+#header .user{
+    margin-right: 48px;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#ket-qua {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 70px;
+}
+#ket-qua h1, p, button{
+    margin-left: 30px;
+}
+#ket-qua h1 {
+    text-align: center;
+}
+
+#ket-qua p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#ket-qua button {
+    margin-top: 10px;
+    padding: 9px 21px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #ad171c;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+#ket-qua a{
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+#chi-tiet {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#chi-tiet h2 {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th,td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    width: 30%;
+}
+
+th {
+    background-color: #ad171c;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.dung {
+    background-color: #cfc;
+}
+
+.sai {
+    background-color: #fcc;
+}
